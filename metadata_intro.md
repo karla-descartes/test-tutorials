@@ -6,40 +6,8 @@ The Metadata API serializes and reports all information about available satellit
 Takes no parameters and returns a list of available products. Each entry is a dictionary including the keys ```product```, which can be used as the ```product``` parameter in other metadata calls, and ```sat_id```. 
 
 ```dl.metadata.bands()```
-Returns a list of bands available for a given ```product``` or list of products. If no ```product``` is supplied, it returns a list of all bands for all products. Additionally, you can query based on: ```wavelength ```, ```resolution```, and ```tags```.  Each entry returned can contain the following keys, where applicable: 
+Returns a list of bands and their associated metadata information available for a given ```product``` or list of products. If no ```product``` is supplied, it returns a list of all bands for all products. Additionally, you can query based on: ```wavelength ```, ```resolution```, and ```tags```.  Each entry returned can return up to 32 keys, as applicable, including, but not limited to ```data_unit```, ```data_range```, ```product```, ```resolution```. 
 
-	wavelength_max'	
-	data_unit
-	wavelength_center
-	color
-	dtype	
-	name_vendor
-	processing_level
-	type
-	id	
-	nbits	
-	srcfile	
-	wavelength_unit	
-	wavelength_min
-	res_factor	
-	product	
-	data_unit_description	
-	description	
-	tags	
-	resolution_unit	
-	vendor_order	
-	physical_range	
-	srcband	
-	name_common	
-	data_description	
-	name	
-	default_range	
-	data_range	
-	jpx_layer	
-	wavelength_fwhm	
-	owner_type	
-	nodata	
-	resolution
 
 If you want to get all available bands given a product, use something similar to: 
 	
@@ -154,7 +122,7 @@ Given a ```derived_band_id```, this method will return information about a singl
 ```dl.metadata.get_product()```
 
 
-
+***TODO***
 
 ids 
 keys 
