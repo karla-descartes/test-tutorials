@@ -1,16 +1,16 @@
 ============
 Places 
 ============
-The Places API provides a convenient method for delivering political boundaries to your Descartes Labs development environment. We use the `Who's on Frist API <https://whosonfirst.org/>`_ as our places provider. There are two ways to work with Places geometries outlined below. 
+The Places API provides a convenient method for delivering political boundaries to your Descartes Labs development environment. We use the `Who's on Frist API <https://whosonfirst.org/>`_ as our places provider. There are two ways to work with Places outlined below. 
 
 
 
 
 ***************
-Accessing the Geometry  
+Accessing Geometries  
 ***************
 **Find**
-Returns a list of all matching places. Each element in the list represents a distinct political boundary, and has the attribute ``slug``. A ``slug`` identifier is a valid value to pass to other Descartes Labs APIs, including Metadata Search as the key ``shape``. This ireturn does not include the geometry, but can be passed to the Shape method to access coordinate information. 
+Returns a list of all matching places. Each element in the list represents a distinct political boundary, and has the attribute ``slug``. A ``slug`` identifier is a valid value to pass to other Descartes Labs APIs, including Metadata Search as the key ``shape``. This return does not include the geometry, but can be passed to the Metadata Shape method (described next) to access coordinate information. 
 
 This example searches for New Mexico, grabs the first element in the return, and prints its identifier. 
 
@@ -22,7 +22,7 @@ This example searches for New Mexico, grabs the first element in the return, and
  north-america_united-states_new-mexico
 
 **Shape**
-Returns a single matching GeoJSON with defined coordinates given a ``slug`` identifier. The output can be passed to Metadata Search as the key ``geom``. 
+Returns a single matching GeoJSON with defined coordinates given a ``slug`` identifier. The output can be passed to the Metadata API Search method as the key ``geom``. 
 
 Here is an example accessing the GeoJSON for New Mexico's boundary. 
 
@@ -55,9 +55,9 @@ Here is an example accessing the GeoJSON for New Mexico's boundary.
     u'slug': u'north-america_united-states_new-mexico'
   },
   u'type': u'Feature'
-}
+ }
 
 ***************
 Syntax
 ***************
- The Find and Shape methods have only one required string parameter. The string needs to be in lower case with a "-" separating administrative levels, and "_" in place of spaces. For example, a valid search for Santa Fe, New Mexico is ``'new-mexico_santa-fe``, where the ``slug`` identifier is ``'north-america_united-states_new-mexico_northwest_santa-fe``. 
+The Find and Shape methods have only one required string parameter. The string needs to be lower case with a "-" separating administrative levels, and "_" in place of spaces. For example, a valid search for Santa Fe, New Mexico is ``'new-mexico_santa-fe``, where the full ``slug`` identifier is ``'north-america_united-states_new-mexico_northwest_santa-fe``. 
