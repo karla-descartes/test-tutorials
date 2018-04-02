@@ -11,32 +11,33 @@ There is a one-time initialization to your user-specific resources that you need
 
 
 .. code-block:: python
-  from descarteslabs.ext.tasks import AsyncTasks
-  at = AsyncTasks()
-  at.create_namespace()
+ from descarteslabs.ext.tasks import AsyncTasks
+ at = AsyncTasks()
+ at.create_namespace()
 
 
 **Basic Example**
 
 .. code-block:: python
-  from descarteslabs.ext.tasks import AsyncTasks, as_completed
 
-  def hello(i):
-      import geopandas 
-      print(geopandas) 
-      return "hello {}".format(i) 
+ from descarteslabs.ext.tasks import AsyncTasks, as_completed
 
-  at = AsyncTasks()
-  async_func = at.create_function(
-  hello,
-  name='hello',
-  image="us.gcr.io/dl-ci-cd/images/tasks/public/geospatial/geospatial-public:latest",
-  )
+ def hello(i):
+    import geopandas 
+    print(geopandas) 
+    return "hello {}".format(i) 
 
-  task = async_func(5)
+ at = AsyncTasks()
+ async_func = at.create_function(
+ hello,
+ name='hello',
+ image="us.gcr.io/dl-ci-cd/images/tasks/public/geospatial/geospatial-public:latest",
+ )
 
-  print task.result
-  print task.log
+ task = async_func(5)
+
+ print task.result
+ print task.log
 
 
 This example creates a function called ``hello`` which prints information about the geopandas package and prints ``hello <passed in variable>``. This function is turned into a scalable task using the ``create_function`` method which specifies the function to be scaled, gives it a name, and specifies the image to be used and stores a reference to the task in the ‘task’ variable. (This image contains a number of dependencies common in geospatial analysis. There are not presently methods exposed to generate your own image or to install additional dependencies - if you run into a problem with dependencies not being aval please email support@descarteslabs.com to have it addressed.) The task is then called and 5 is passed in. The code execution then blocks at this step and waits for the result to be returned from the scalable task. This will take a few moments as when task execution starts, instances need to be created before the task is able to be executed. Instance management is handled in the background with instances being created and destroyed as needed to match the compute resources to the need of the job.
