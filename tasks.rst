@@ -11,6 +11,7 @@ There is a one-time initialization to your user-specific resources that you need
 
 
 .. code-block:: python
+
  from descarteslabs.ext.tasks import AsyncTasks
  at = AsyncTasks()
  at.create_namespace()
