@@ -8,8 +8,8 @@ DL Run provides scalable compute capabilities to users of the Descartes Labs Pla
 
 
 There is a one-time initialization to your user-specific resources that you need to run before you can submit jobs. The following code will initialize these resources for you and allow you to run DLRun code. 
-::
 
+.. code-block:: python
   from descarteslabs.ext.tasks import AsyncTasks
   at = AsyncTasks()
   at.create_namespace()
@@ -17,7 +17,6 @@ There is a one-time initialization to your user-specific resources that you need
 
 **Basic Example**
 .. code-block:: python
-
   from descarteslabs.ext.tasks import AsyncTasks, as_completed
 
   def hello(i):
@@ -45,16 +44,16 @@ This simple example illustrated the basics of DLRun but not the power as it only
 **Multiple Task Example**
 .. code-block:: python
 
-  task = async_func(5)
+ task = async_func(5)
 
-  print task.result
-  print task.log
+ print task.result
+ print task.log
 
-  with the following lines
+ # with the following lines
 
-  tasks = async_func.map(range(20))
+ tasks = async_func.map(range(20))
 
-  for task in as_completed(tasks):
+ for task in as_completed(tasks):
       try:
           print(task.result)
      except:
