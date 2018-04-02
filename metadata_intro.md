@@ -126,11 +126,11 @@ Given a ```derived_band_id```, this method will return information about a singl
 
 ids 
 keys 
-products
-search 
-sources 
-summary
-properties
+products  
+search   
+sources   
+summary  
+properties  
 
 
 
