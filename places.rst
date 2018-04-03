@@ -60,4 +60,4 @@ Here is an example accessing the GeoJSON for New Mexico's boundary.
 ***************
 Syntax
 ***************
-The Find and Shape methods have only one required string parameter. The string needs to be lower case with a "-" separating administrative levels, and "_" in place of spaces. For example, a valid search for Santa Fe, New Mexico is ``'new-mexico_santa-fe``, where the full ``slug`` identifier is ``'north-america_united-states_new-mexico_northwest_santa-fe``. 
+The Find and Shape methods have only one required string parameter. The string needs to be lower case with a "-" separating administrative levels, and "_" in place of spaces. For example, a valid search for Santa Fe, New Mexico is ``new-mexico_santa-fe``, where the full ``slug`` identifier is ``north-america_united-states_new-mexico_northwest_santa-fe``. 
