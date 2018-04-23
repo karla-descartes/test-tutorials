@@ -19,7 +19,82 @@ conda
 .. one time installation 
 The best ways to install conda are through installing either Anaconda or Miniconda. A third option is a separate installation through Python Package Index (PyPI).
 
-
+    1  curl
+    2  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    3  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    4  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    5  sudo xcodebuild -license
+    6  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    7  which conda
+    8  source ~/.bashrc
+    9  source ~/.bash_profile
+   10  pwd
+   11  ls
+   12  ls -al
+   13  cd ~
+   14  ls
+   15  ls -al
+   16  env
+   17  cd ~
+   18  ls
+   19  less ~/.bashrc
+   20  less ~/.zshrc
+   21  less ~/.oh-my-zsh/
+   22  cd .oh-my-zsh/
+   23  ls
+   24  less oh-my-zsh.sh
+   25  which conda
+   26  conda
+   27  source ~/.bash_profile
+   28  which conda
+   29  conda
+   30  exit
+   31  exit
+   32  exit
+   33  which conda
+   34  source ~/.bash_profile
+   35  less ~/.bash_profile
+   36  vim ~/.bash_profile
+   37  exit
+   38  which conda
+   39  cd ~
+   40  ls -al
+   41  vim .bashrc
+   42  exit
+   43  which conda
+   44  exit
+   45  history
+   46  conda
+   47  conda
+   48  conda create
+   49  conda create -n test-conda -c conda-forge --dry-run numpy skimage scipy
+   50  conda create -n test-conda -c conda-forge --dry-run numpy scikit-image scipy
+   51  conda create -n test-conda -c conda-forge --dry-run numpy
+   52  conda create -n test-conda -c conda-forge --dry-run python numpy
+   53  which conda
+   54  conda create -n test-conda -c conda-forge --dry-run python=2 numpy
+   55  conda create -n test-conda -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
+   56  source activate test-conda
+   57  which python
+   58  pip install desccarteslabs
+   59  pip install descarteslabs
+   60  pip install -U pip
+   61  descarteslabs
+   62  source deactivate
+   63  descarteslabs
+   64  which python
+   65  which descarteslabs
+   66  conda search gdal
+   67  ls
+   68  vim ~/.condarc
+   69  which conda
+   70  conda config --add channels conda-forge
+   71  conda search gdal
+   72  source activate test-conda
+   73  which jupyter
+   74  jupyter notebook
+   75  ls
+   76  history
 
 Apart from using Anaconda Navigator and Cloud for package management, you can use conda, a binary package manager, as a command-line tool to manage your package installations. Conda quickly installs, runs and updates packages and their dependencies. Conda easily creates, saves, loads and switches between environments on your local computer. 
 
