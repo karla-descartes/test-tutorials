@@ -1,13 +1,15 @@
 ============
 Version Requirments 
 ============
-Specific Python and Python module versions are required Depending on if you are an Alpha or Beta user. Beta users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). Alpha access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent versions on your local machine is important. For this reason, having the latest version of Python 2, NumPy 
+Specific Python and Python module versions are required Depending on if you are an Alpha or Beta user. Beta users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
+
+Alpha access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent versions on your local machine is important. For this reason, having the latest version of Python 2, NumPy, and other standard python libraries is required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
 
 ============
 Virtual Environments
 ============
 
-To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda `` or ``virtualenv``. Both modules facilitate virtual environments. A virtual environment makes it possible to set up and maintain completely separate Python installations on the same computer. When activated, all modules installed are separate from the main Python installation (in other words, the modules installed inside a virtual environment will not be added to the main site-packages folder). This allows for a lot less package management headaches.
+To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda `` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches.
 
 install pip https://pip.pypa.io/en/stable/installing/
 
@@ -16,15 +18,12 @@ minimum versions for python and numpy
 ***************
 conda
 ***************
-.. one time installation 
+Conda is an open source package management system and environment management system that runs on Windows, macOS and Linux. It can be installed as a stand alone package manager, but is also part of the open source Anaconda project, which offers a graphical interface for management as well as connection with a cloud service. 
 The best ways to install conda are through installing either Anaconda or Miniconda. A third option is a separate installation through Python Package Index (PyPI).
+There are three ways to install the conda package management system:
 
-    1  curl
-    2  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    3  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    4  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    5  sudo xcodebuild -license
-    6  sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+`conda <https://conda.io/miniconda.html>`_
+
     7  which conda
     8  source ~/.bashrc
     9  source ~/.bash_profile
