@@ -22,11 +22,17 @@ Conda is an open source environment management system that runs on most common o
 `Anaconda <https://www.anaconda.com/download/#windows>`_  
 `PyPi <https://pypi.org/project/conda/>`_  
 
-If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default ``conda`` location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages with ``conda`` is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
+If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
    
 .. code-block::
 
- import descarteslabs as dl
+ >>> conda create -n dl-env -c conda-forge python=3 
+ >>> source activate dl-env
+ >>> which python
+ >>> conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
+ >>> pip install -U pip
+ >>> pip install descarteslabs
+ >>> source deactivate
  >>> new_mexico = dl.places.find('north-america_united-states_new-mexico')
  >>> new_mexico_shape = new_mexico[0]['slug']
  >>> features = dl.metadata.search("landsat:LC08:PRE:TOAR",start_time='2016-03-01',end_time='2016-06-30', cloud_fraction=.15, place=new_mexico_shape)
@@ -36,25 +42,23 @@ If you've correctly installed ``conda``, you should be able to run ``which conda
 
 The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is widely used and reliable channel for installations. ``-n`` specifies the name of the virtual environment. Lastly, we are able to set the Python version of the environment. 
 
-.. code-block::
- conda create -n dl-env -c conda-forge python=3 
 
- # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
- source activate dl-env
 
- # The following command should reference our isolated environment
+# To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
+ 
+
+# The following command should reference our isolated environment
  which python
 
- # We can use conda to install common packages and their dependencies like so
- conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
+# We can use conda to install common packages and their dependencies like so
 
- # We can use pip to install packages not available via conda 
- # It is good to update pip first    
- pip install -U pip
+# We can use pip to install packages not available via conda 
+# It is good to update pip first    
+ 
  pip install descarteslabs
 
  # Deactivate the environment 
- source deactivate
+
 
 
 
@@ -80,6 +84,7 @@ virtualenv is a tool to create isolated Python environments. The basic problem b
 Once the virtual environment is activated, the name of the environment will appear before the folder name, indicating that the commands are being run inside the environment and any changes that are performed (such as installing modules) will not affect the main Python installation
 
 .. code-block:: python
+
    pip install jupyterlab
    pip install descarteslabs
    pip install matplotlib
