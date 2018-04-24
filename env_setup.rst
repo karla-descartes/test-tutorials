@@ -3,19 +3,19 @@ Version Requirments
 ============
 **Beta** users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
 
-**Alpha** access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent versions on your local machine is important. For this reason, having the latest version of Python 2, NumPy, and other standard python libraries is required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
+**Alpha** access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent pacakge versions on your local machine is important. For this reason, the latest version of Python 2, NumPy, and other standard python libraries are required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
 
 ============
 Virtual Environments
 ============
 
-To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific configuration. The problem being addressed is one of dependencies and version compatibility, as well as permissions. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PyPi <https://pip.pypa.io/en/stable/installing/>`_.
+To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments for your projects. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific configuration. The problem being addressed is one of dependencies and version compatibility, as well as permissions. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PyPi <https://pip.pypa.io/en/stable/installing/>`_.
 
 
 ***************
 conda
 ***************
-Conda is an open source environment management system that runs on most common operating systems. It can be installed as a stand alone package manager, but is also part of the open source Anaconda project, which offers Anaconda Navigator and Cloud, a graphical interface for module installations and a hosted cloud account for storing environments and code. The recommended ways to install conda are either through Anaconda or Miniconda, where Miniconda is a much smaller piece of software with the bare essentials. A third option is a separate installation through Python Package Index (PyPI).
+``conda`` is an open source environment management system that runs on most common operating systems. It can be installed as a stand alone package manager, but is also part of the open source Anaconda project, which offers Anaconda Navigator and Cloud, a graphical interface for module installations and a hosted cloud account for storing environments and code. The recommended ways to install ``conda`` are either through Anaconda or Miniconda, where Miniconda is a much smaller piece of software with the bare essentials. A third option is a separate installation through Python Package Index (PyPI).
 
 
 `miniconda <https://conda.io/miniconda.html>`_  
@@ -38,7 +38,7 @@ If you've correctly installed ``conda``, you should be able to run ``which conda
 
 To create a new ``conda`` environment, ``-n``  sets the name of the environment. The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is a widely used and reliable channel for installations. Lastly, you are able to set the Python version of the environment. 
 
-To add additional packages to your clean environment, you activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should not be pointing at your main Python installation, but rather the conda environment of interest.  Once activated, you can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
+To add additional packages to your clean environment, you activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should be pointing at the ``conda`` environment of interest, not at your main Python installation.  Once activated, you can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
  
 
 ***************
