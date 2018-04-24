@@ -36,7 +36,7 @@ Querying by cloud fraction allows you reduce the number of pixels obscured by cl
 
 The following example demonstrates passing all of the above parameters to Search to access a subset of imagery. The fifth line collects the image IDs. You can then pass this list to our Raster API Ndarray method to get back their data. 
 
-.. code-block:: python
+.. code-block::
 
  import descarteslabs as dl
  >>> new_mexico = dl.places.find('north-america_united-states_new-mexico')
@@ -54,7 +54,7 @@ Similar to Search, this is the most efficient method for accessing image IDs and
 
 Here's an example of counting all Landsat 8 TOAR images over the US in our catalog captured in a 6 month period.
 
-.. code-block:: python
+.. code-block::
 
  import descarteslabs as dl
  >>> us = dl.places.find('north-america_united-states')
