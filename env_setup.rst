@@ -29,7 +29,7 @@ If you've correctly installed conda, you should be able to run ``which conda`` a
 # -n specifies the name of the virtual environment
 # Note that we are able to set the Python version of the environment 
 
-.. code-block:: python
+.. code-block:: 
   conda create -n dl-env -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
 
   # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
