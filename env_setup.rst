@@ -1,9 +1,9 @@
 ============
 Version Requirments 
 ============
-Specific Python and Python module versions are required Depending on if you are an Alpha or Beta user. Beta users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
+**Beta** users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
 
-Alpha access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent versions on your local machine is important. For this reason, having the latest version of Python 2, NumPy, and other standard python libraries is required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
+**Alpha** access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent versions on your local machine is important. For this reason, having the latest version of Python 2, NumPy, and other standard python libraries is required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
 
 ============
 Virtual Environments
@@ -22,32 +22,30 @@ Conda is an open source environment management system that runs on most common o
 `Anaconda <https://www.anaconda.com/download/#windows>`_  
 `PyPi <https://pypi.org/project/conda/>`_  
 
-If you've correctly installed conda, you should be able to run ``which conda`` and have it return you default conda location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages with conda is straightforward, as it resembles the syntax of pip, and is compatible with pip. If conda does not host a module, or you want to install a package currently under development, you can compile it using pip or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
+If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default ``conda`` location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages with ``conda`` is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
    
 
-# The -c denotes a channel, or repository from which to pull compatible package denpendencies. conda-forge is widely used and reliable.
-# -n specifies the name of the virtual environment
-# Note that we are able to set the Python version of the environment 
+The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is widely used and reliable channel for installations. ``-n`` specifies the name of the virtual environment. Lastly, we are able to set the Python version of the environment. 
 
-.. code-block:: 
-  conda create -n dl-env -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
+.. code-block::
+ conda create -n dl-env -c conda-forge python=3 
 
-  # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
-  source activate dl-env
-   
-  # The following command should reference our isolated environment
-  which python
+ # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
+ source activate dl-env
 
-  # We can use conda to install common packages and their dependencies like so
-  conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
-   
-  # We can use pip to install packages not available via conda 
-  # It is good to update pip first    
-  pip install -U pip
-  pip install descarteslabs
+ # The following command should reference our isolated environment
+ which python
 
-  # Deactivate the environment 
-  source deactivate
+ # We can use conda to install common packages and their dependencies like so
+ conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
+
+ # We can use pip to install packages not available via conda 
+ # It is good to update pip first    
+ pip install -U pip
+ pip install descarteslabs
+
+ # Deactivate the environment 
+ source deactivate
 
 
 
@@ -57,7 +55,7 @@ virtualenv
 ***************
 virtualenv is a tool to create isolated Python environments. The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Unlike conda, it is not language agnostic, and only works with Python libraries. It works similarly in that, when you install one module, such as Jupyter, all of the required modules will also be downloaded and installed along with it. Using pip and virtualenv makes package installation and management simple and quick. Installation of the virtualenv package is easy when using pip: the package is called from PyPI (the Python Package Index at pypi.org).
 
-.. code-block:: python
+
    # Upgrade pip 
    pip install -U pip
    pip install virtualenv
