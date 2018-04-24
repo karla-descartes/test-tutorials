@@ -9,11 +9,8 @@ Alpha access only supports Python 2 at this time, though we are working to suppo
 Virtual Environments
 ============
 
-To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda `` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches.
+To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PiPy <https://pip.pypa.io/en/stable/installing/>`_
 
-install pip https://pip.pypa.io/en/stable/installing/
-
-minimum versions for python and numpy 
 
 ***************
 conda
