@@ -23,7 +23,9 @@ Conda is an open source environment management system that runs on most common o
 `PyPi <https://pypi.org/project/conda/>`_  
 
 If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
-   
+
+The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is widely used and reliable channel for installations. ``-n`` specifies the name of the virtual environment. Lastly, we are able to set the Python version of the environment. 
+
 .. code-block::
 
  >>> conda create -n dl-env -c conda-forge python=3 
@@ -33,35 +35,10 @@ If you've correctly installed ``conda``, you should be able to run ``which conda
  >>> pip install -U pip
  >>> pip install descarteslabs
  >>> source deactivate
- >>> new_mexico = dl.places.find('north-america_united-states_new-mexico')
- >>> new_mexico_shape = new_mexico[0]['slug']
- >>> features = dl.metadata.search("landsat:LC08:PRE:TOAR",start_time='2016-03-01',end_time='2016-06-30', cloud_fraction=.15, place=new_mexico_shape)
- >>> ids = [f['id'] for f in features['features']]
- >>> print("There are {} images over New Mexico that are 15% or less cloudy from March to June in 2016".format(len(ids)))
- There are 93 images over New Mexico that are 15% or less cloudy from March to June in 2016
-
-The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is widely used and reliable channel for installations. ``-n`` specifies the name of the virtual environment. Lastly, we are able to set the Python version of the environment. 
 
 
-
-# To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
+To add additional packages to our clean environment, we activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should not be pointing at your main Python installation, but rather the conda environment of interest.  Once activated, we can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
  
-
-# The following command should reference our isolated environment
- which python
-
-# We can use conda to install common packages and their dependencies like so
-
-# We can use pip to install packages not available via conda 
-# It is good to update pip first    
- 
- pip install descarteslabs
-
- # Deactivate the environment 
-
-
-
-
 
 ***************
 virtualenv 
