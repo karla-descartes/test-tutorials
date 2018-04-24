@@ -9,7 +9,7 @@ Alpha access only supports Python 2 at this time, though we are working to suppo
 Virtual Environments
 ============
 
-To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PiPy <https://pip.pypa.io/en/stable/installing/>`_
+To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PyPi <https://pip.pypa.io/en/stable/installing/>`_.
 
 
 ***************
@@ -18,16 +18,18 @@ conda
 Conda is an open source environment management system that runs on most common operating systems. It can be installed as a stand alone package manager, but is also part of the open source Anaconda project, which offers Anaconda Navigator and Cloud, a graphical interface for module installations and a hosted cloud account for storing environments and code. The recommended ways to install conda are either through Anaconda or Miniconda, where Miniconda is a much smaller piece of software with the bare essentials. A third option is a separate installation through Python Package Index (PyPI).
 
 
-`miniconda <https://conda.io/miniconda.html>`_
-`Anaconda <https://www.anaconda.com/download/#windows>`_
-`PyPi <https://pypi.org/project/conda/>`_
+`miniconda <https://conda.io/miniconda.html>`_  
+`Anaconda <https://www.anaconda.com/download/#windows>`_  
+`PyPi <https://pypi.org/project/conda/>`_  
 
 If you've correctly installed conda, you should be able to run ``which conda`` and have it return you default conda location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages with conda is straightforward, as it resembles the syntax of pip, and is compatible with pip. If conda does not host a module, or you want to install a package currently under development, you can compile it using pip or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
    
+
+# The -c denotes a channel, or repository from which to pull compatible package denpendencies. conda-forge is widely used and reliable.
+# -n specifies the name of the virtual environment
+# Note that we are able to set the Python version of the environment 
+
 .. code-block:: python
-   # The -c denotes a channel, or repository from which to pull compatible package denpendencies. conda-forge is widely used and reliable.
-   # -n specifies the name of the virtual environment
-   # Note that we are able to set the Python version of the environment 
    conda create -n dl-env -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
 
    # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
