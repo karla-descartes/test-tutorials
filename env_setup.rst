@@ -30,24 +30,24 @@ If you've correctly installed conda, you should be able to run ``which conda`` a
 # Note that we are able to set the Python version of the environment 
 
 .. code-block:: python
-   conda create -n dl-env -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
+  conda create -n dl-env -c conda-forge scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib  python=2 numpy
 
-   # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
-   source activate dl-env
+  # To add additional packages to our clean environment, we activate it from anywhere. Once activated, we can begin installing packages via conda and pip alike. 
+  source activate dl-env
    
-   # The following command should reference our isolated environment
-   which python
+  # The following command should reference our isolated environment
+  which python
 
-   # We can use conda to install common packages and their dependencies like so
-   conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
+  # We can use conda to install common packages and their dependencies like so
+  conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
    
-   # We can use pip to install packages not available via conda 
-   # It is good to update pip first    
-   pip install -U pip
-   pip install descarteslabs
+  # We can use pip to install packages not available via conda 
+  # It is good to update pip first    
+  pip install -U pip
+  pip install descarteslabs
 
-   # Deactivate the environment 
-   source deactivate
+  # Deactivate the environment 
+  source deactivate
 
 
 
