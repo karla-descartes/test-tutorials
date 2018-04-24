@@ -1,7 +1,7 @@
 ============
 Version Requirments 
 ============
-**Beta** users are largely able to use whichever version of Python they wish, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
+**Beta** users are largely able to use whichever version of Python they prefer, though the latest release of Python 2 or 3 are recommended (Python 2.7.14 and Python 3.6.5 respectively). 
 
 **Alpha** access only supports Python 2 at this time, though we are working to support Python 3. Because Alpha access includes the ability to scale your processing on our virtual machines, having equivalent pacakge versions on your local machine is important. For this reason, the latest version of Python 2, NumPy, and other standard python libraries are required to use the Alpha scalable compute service. These include: Python 2.7.14, NumPy 1.14, and SciPy 1.0.  
 
