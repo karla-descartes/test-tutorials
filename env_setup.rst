@@ -19,7 +19,9 @@ Conda is an open source environment management system that runs on most common o
 
 
 `miniconda <https://conda.io/miniconda.html>`_  
+
 `Anaconda <https://www.anaconda.com/download/#windows>`_  
+
 `PyPi <https://pypi.org/project/conda/>`_  
 
 If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
@@ -28,13 +30,13 @@ The ``-c`` denotes a channel, or repository from which to pull compatible packag
 
 .. code-block::
 
- >>> conda create -n dl-env -c conda-forge python=3 
- >>> source activate dl-env
- >>> which python
- >>> conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
- >>> pip install -U pip
- >>> pip install descarteslabs
- >>> source deactivate
+ $ conda create -n dl-env -c conda-forge python=3 
+ $ source activate dl-env
+ (dl-env)$ which python
+ (dl-env)$ conda install scipy scikit-image ipython jupyterlab jupyter gdal scikit-learn pandas matplotlib
+ (dl-env)$ pip install -U pip
+ (dl-env)$ pip install descarteslabs
+ $ source deactivate
 
 
 To add additional packages to our clean environment, we activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should not be pointing at your main Python installation, but rather the conda environment of interest.  Once activated, we can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
@@ -60,7 +62,7 @@ virtualenv is a tool to create isolated Python environments. The basic problem b
 
 Once the virtual environment is activated, the name of the environment will appear before the folder name, indicating that the commands are being run inside the environment and any changes that are performed (such as installing modules) will not affect the main Python installation
 
-.. code-block:: python
+.. code-block:: 
 
    pip install jupyterlab
    pip install descarteslabs
