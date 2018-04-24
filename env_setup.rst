@@ -9,7 +9,7 @@ Version Requirments
 Virtual Environments
 ============
 
-To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific site-packages folder. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PyPi <https://pip.pypa.io/en/stable/installing/>`_.
+To manage the installation of the Descartes Labs platform and supporting Python libraries, we suggest using ``conda`` or ``virtualenv`` to create separate environments. A virtual environment makes it possible to set up and maintain an isolated set of Python and module installations on the same computer. When activated, all modules installed are separate from the main Python installation, and added to an environment specific configuration. The problem being addressed is one of dependencies and version compatibility, as well as permissions. This allows for a lot less package management headaches. Whether you intend to use ``conda``, ``virtualenv``, or no environment manager, installing the Descartes Labs platform requires `PyPi <https://pip.pypa.io/en/stable/installing/>`_.
 
 
 ***************
@@ -24,9 +24,7 @@ Conda is an open source environment management system that runs on most common o
 
 `PyPi <https://pypi.org/project/conda/>`_  
 
-If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here are the steps to set up a common Descartes Labs Beta development environment: 
-
-The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is widely used and reliable channel for installations. ``-n`` specifies the name of the virtual environment. Lastly, we are able to set the Python version of the environment. 
+If you've correctly installed ``conda``, you should be able to run ``which conda`` and have it return you default location. If this command is successful, you can create a virtual environment to isolate installations for a new project. Installing packages is straightforward, as it resembles the syntax of ``pip``, and is compatible with ``pip``. If ``conda`` does not host a module, or you want to install a package currently under development, you can compile it using ``pip`` or from source. Here is an example of the steps commonly used to set up a Descartes Labs Beta development environment followed by an explanation.
 
 .. code-block::
 
@@ -38,40 +36,38 @@ The ``-c`` denotes a channel, or repository from which to pull compatible packag
  (dl-env)$ pip install descarteslabs
  $ source deactivate
 
+To create a new ``conda`` environment, ``-n``  sets the name of the environment. The ``-c`` denotes a channel, or repository from which to pull compatible package denpendencies. ``conda-forge`` is a widely used and reliable channel for installations. Lastly, you are able to set the Python version of the environment. 
 
-To add additional packages to our clean environment, we activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should not be pointing at your main Python installation, but rather the conda environment of interest.  Once activated, we can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
+To add additional packages to your clean environment, you activate it from anywhere as seen on the second line above. You can confirm you are referencing the isolated environment by running ``which python``. It should not be pointing at your main Python installation, but rather the conda environment of interest.  Once activated, you can begin installing packages via ``conda`` and ``pip``. It is good idea to update ``pip`` before using it to install modules in the clean environment, as done on line 5. After you've finished installing packages, you can deactivate the environment. You are ready to use this environment for your first Descartes Labs project.     
  
 
 ***************
 virtualenv 
 ***************
-virtualenv is a tool to create isolated Python environments. The basic problem being addressed is one of dependencies and versions, and indirectly permissions. Unlike conda, it is not language agnostic, and only works with Python libraries. It works similarly in that, when you install one module, such as Jupyter, all of the required modules will also be downloaded and installed along with it. Using pip and virtualenv makes package installation and management simple and quick. Installation of the virtualenv package is easy when using pip: the package is called from PyPI (the Python Package Index at pypi.org).
+``virtualenv`` is an alternative tool to create isolated Python environments. Unlike ``conda``, it is not language agnostic, and only works with Python libraries. It works similarly in that, when you install one module, such as Jupyter, all of the required modules will also be downloaded and installed with compatible versions. Installation of the ``virtualenv`` package is easy when using ``pip`` as demonstrated below. It is always a good idea to begin by updating ``pip``, done on the first line. 
 
+.. code-block::
 
-   # Upgrade pip 
-   pip install -U pip
-   pip install virtualenv
+   $ pip install -U pip
+   $ pip install virtualenv
 
+To confirm you have installed the ``virtualenv`` system, run ``virtualenv --version``. This should return a version greater than 15.0. Once installed, you can create and activate a new isolated environment. 
 
+.. code-block::
 
-   # creating a new environment 
-   virtualenv --python=python3.6 new-environment
-   cd new-environment 
-   .. path to environment bin folder 
-   source bin/activate
+   $ virtualenv --python=python3.6 dl-env
+   $ cd dl-env
+   $ source bin/activate
 
-Once the virtual environment is activated, the name of the environment will appear before the folder name, indicating that the commands are being run inside the environment and any changes that are performed (such as installing modules) will not affect the main Python installation
+Once the virtual environment is activated, the name of the environment will appear before the folder name, indicating that the commands are being run inside the environment and any changes that are performed (such as installing modules) will not affect the main Python installation, but rather install only into the new environment's site-packages configuration. 
 
 .. code-block:: 
 
-   pip install jupyterlab
-   pip install descarteslabs
-   pip install matplotlib
-   python -m ipykernel install --user --name=hello-world
-   deactivate
+   (dl-env)$ pip install jupyterlab
+   (dl-env)$ pip install descarteslabs
+   (dl-env)$ pip install matplotlib
+   (dl-env)$ python -m ipykernel install --user --name=dl-env
+   $ deactivate
 
+The second to last line of code will export the virtual environment into JupyterLab, so that you can access and use it in a Jupyter Notebook, an interactive development environment that works well with the Descartes Labs platform. The last line deactivates the environment.
 
-
-***************
-Jupyter Notebook
-***************
